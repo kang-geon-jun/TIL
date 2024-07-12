@@ -69,3 +69,32 @@
 - git ignore 생성 후 내용에 파일 이름 작성
 - 만약 git ignore을 했음에도 선택 파일이 불빛이 들어오면 git이 작용하고 있다는 뜻
 - 이런 경우 git rm --cached 명령어를 사용하여 git 캐시에서 삭제
+
+ㅇ git revert&reset
+
+- git revert <commit id>
+  : 이전에 있던 커밋을 없던 일로 되돌린다는 "커밋"생성 -> 기록이 남음
+    커밋을 만드는 것이기에 "message 작성 필요"
+    - 공백을 사용해서 여러 commit을 한번에 실행 취소 가능
+    - ..을 통해서 범위지정가능
+    - --no-edit을 통해 편집기 사용 없엠 (Vim)
+    - --no-commit을 통해 여러 커밋을 revert할 때 하나의 commit으로 묶을 수 있음
+
+
+- git reset [옵션]
+옵션 1. --soft : 삭제된 commit 기록을 staging area로 이동
+    1. --mixed : 삭제된 commit 기록을 Working directory로 이동
+    2. --hard : 삭제된 commit 기록을 저장 안함
+
+- git reflog : HEAD가 이전에 가리켰던 모든 commit을 보여줌
+              reset의 --hard 옵션을 통해 지워진 commit도 reflog로 조회하여 복구가능
+
+- git undoing : 파일 내용을 수정 전으로 되돌리기
+                (staging area -> W.D.로 이동)
+
+- git restore : modified 상태의 파일 되돌리기
+                (ctrl + Z의 역할)
+
+- git rm --cached 파일명 : git 저장소에 commit이 없는 경우
+
+- git restore --staged 파일명 : git 저장소에 commit이 있는 경우
