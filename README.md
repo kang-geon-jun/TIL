@@ -83,8 +83,8 @@
 
 - git reset [옵션]
 옵션 1. --soft : 삭제된 commit 기록을 staging area로 이동
-    1. --mixed : 삭제된 commit 기록을 Working directory로 이동
-    2. --hard : 삭제된 commit 기록을 저장 안함
+    2. --mixed : 삭제된 commit 기록을 Working directory로 이동
+    3. --hard : 삭제된 commit 기록을 저장 안함
 
 - git reflog : HEAD가 이전에 가리켰던 모든 commit을 보여줌
               reset의 --hard 옵션을 통해 지워진 commit도 reflog로 조회하여 복구가능
